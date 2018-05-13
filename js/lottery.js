@@ -19,9 +19,9 @@ function getCookie(cookiename){
     }
 }
 
-//清除cookie  
-function clearCookie(cookiename) {  
-    setCookie(cookiename, "", -1);  
+//清除cookie
+function clearCookie(cookiename) {
+    setCookie(cookiename, "", -1);
 }
 
 //随机数
@@ -50,7 +50,7 @@ function hideToast(){
 }
 
 var $popover = $('.popover'), $lottery = $('#lotterys'), $go = $('#go'), $modal = $('.popover,.modal'), $lottery_num = $('#lottery_num'), total_num = getCookie('LOTTERY_TOTAL_NUM') || 3;
-var canvas = document.getElementById("lotterys"), w = h = 300;  
+var canvas = document.getElementById("lotterys"), w = h = 300;
 var ctx = canvas.getContext("2d");
 var _lottery = {
 	title: [],			 //奖品名称
@@ -72,41 +72,48 @@ function drawLottery(lottery_index){
   	if (canvas.getContext) {
 	  var arc = Math.PI / (_lottery.title.length / 2); //根据奖品个数计算圆周角度
 	  ctx.clearRect(0,0,w,h); //在给定矩形内清空一个矩形
-	  ctx.strokeStyle = "#e95455"; //strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式  
+	  ctx.strokeStyle = "#e95455"; //strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式
 	  ctx.font = '16px Microsoft YaHei'; //font 属性设置或返回画布上文本内容的当前字体属性
-	  for(var i = 0; i < _lottery.title.length; i++) { 
+	  for(var i = 0; i < _lottery.title.length; i++) {
 		  var angle =  _lottery.startAngle + i * arc;
 		  ctx.fillStyle = _lottery.colors[i];
-		   
+
 		  //创建阴影（两者同时使用） shadowBlur:阴影的模糊级数   shadowColor:阴影颜色 【注：相当耗费资源】
-		  //ctx.shadowBlur = 1;  
-		  //ctx.shadowColor = "#fff";  
-		 
+		  //ctx.shadowBlur = 1;
+		  //ctx.shadowColor = "#fff";
+
 		  ctx.beginPath();
-		  //arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）  
-		  ctx.arc(w / 2, h / 2, _lottery.outsideRadius, angle, angle + arc, false);  
+		  //arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
+		  ctx.arc(w / 2, h / 2, _lottery.outsideRadius, angle, angle + arc, false);
 		  ctx.arc(w / 2, h / 2, _lottery.insideRadius, angle + arc, angle, true);
 		  ctx.stroke();
 		  ctx.fill();
-		  ctx.save();    
-		  
+		  ctx.save();
+
 		  //----绘制奖品开始----
 		  //中奖后改变背景色
 		  if(lottery_index != undefined && i == lottery_index){
-		  	ctx.fillStyle = _lottery.endColor;
-		  	ctx.fill();
+			  ctx.fillStyle = _lottery.endColor;
+			  ctx.fill();
 		  }
 		  ctx.fillStyle = "#fff";
-		  
+
 		  var text = _lottery.title[i], line_height = 17, x, y;
 		  x = w / 2 + Math.cos(angle + arc / 2) * _lottery.textRadius;
 		  y = h / 2 + Math.sin(angle + arc / 2) * _lottery.textRadius;
 		  ctx.translate(x, y); //translate方法重新映射画布上的 (0,0) 位置
 		  ctx.rotate(angle + arc / 2 + Math.PI / 2); //rotate方法旋转当前的绘图
-		  ctx.fillText(text, -ctx.measureText(text).width / 2, 0); //measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
-		  ctx.restore(); //把当前画布返回（调整）到上一个save()状态之前 
+		  ctx.fillText(text, -ctx.measureText(text).width / 2,-12); //measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
+		  var img= document.querySelector("#prize"+(i+1));
+		  img.onload=function(){
+			  ctx.drawImage(img, -23, -2,46,46);
+		  };
+		  ctx.drawImage(img, -23, -2,46,46);
+		  // ctx2.drawImage(img, 0, 0, 100, 100);
+		  // ctx3.drawImage(img, 225, 35, 100, 100, 225, 35, 100, 100);
+		  ctx.restore(); //把当前画布返回（调整）到上一个save()状态之前
 		  //----绘制奖品结束----
-	  	}     
+	  	}
   	}
 }
 
@@ -144,7 +151,7 @@ function lottery(){
 	}else{
 		var angels = [247, 202, 157, 112, 67, 22, 337, 292]; //对应角度
 		drawLottery();
-		item = rnd(0,7); 
+		item = rnd(0,7);
 		rotateFn(item, angels[item], _lottery.title[item]);
 		total_num--;
 	}
@@ -175,13 +182,13 @@ function close_popover(){
 }
 
 $(function(){
-	
+
     //初始化我的抽奖记录
     record_log();
-    
+
     //初始化抽奖次数
     changeNum(total_num);
-    
+
 	//动态添加大转盘的奖品与奖品区域背景颜色
 	_lottery.title = ["毛绒玩具", "谢谢参与", "杯子", "谢谢参与", "抽纸", "谢谢参与", "丝袜", "谢谢参与"];
 	_lottery.colors = ["#fe807d", "#fe7771", "#fe807d", "#fe7771","#fe807d", "#fe7771", "#fe807d", "#fe7771"];
@@ -190,7 +197,7 @@ $(function(){
 	$go.click(function (){
 		lottery();
 	});
-	
+
 	//领取/分享/再抽一次
 	$('.modal_btns').on('click',function(){
 		var thisId = $(this).attr('id');
@@ -206,7 +213,7 @@ $(function(){
 			break;
 		}
 	});
-	
+
 	//我的中奖记录和活动规则
     $('.lottery_btns a').click(function(){
 	    	var theID = $(this).attr('id');
@@ -217,7 +224,7 @@ $(function(){
 	    		$popover.show().find('.m1').show();
 	    	}
     });
-    
+
     //关闭弹出层
 	$('.modal.m6, .close_btn').click(function (){
 		close_popover();

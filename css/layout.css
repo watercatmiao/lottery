@@ -41,14 +41,15 @@ a{text-decoration: none;color:#666;-webkit-touch-callout: none!important;}
 #my_lottery_list.lottery_list li{border:1px solid #dadada;}
 
 /*抽奖页*/
-#wrapper{height:inherit;padding-bottom:20px;background:#fcd974 url('../img/lottery_bg.jpg') no-repeat center center;background-size:cover;}
+#wrapper{height:inherit;padding-bottom:20px;background:#fcd974 url('../img/lottery_bg.jpg') no-repeat center center;background-size:cover;box-sizing: border-box;}
+.lottery_txt{margin-top: 10px;}
 .lottery_txt strong{color:#f25b3a;font-size:1.1rem;letter-spacing:1px;}
 #lottery_num{font-family:arial;font-size:1.3rem;}
 .lottery_txt p{color:#ffa200;font-size:.8rem;}
 .lottery_box{margin-bottom:3%;}
 .lottery_turntable{-webkit-transform:scale(.96);width:300px;margin:0 auto;height:300px;background-color:#ff5859;border-radius:50%;box-shadow:-1px 2px 4px #ff5758;}
 .turntable{-webkit-animation:rotate 7s linear both reverse infinite;height:100%;background:url("../img/dot.png") no-repeat center center;background-size:92%;}
-#lotterys{width:84%;margin:0 auto;position:absolute;left:8%;top:8%;z-index:2;-webkit-transform:rotate(-90deg);}
+#lotterys{width:84%;margin:0 auto;position:absolute;left:8%;top:8%;z-index:2;}
 #go{-webkit-transform-origin:center;width:100px;height:100px;background:url('../img/go.png') no-repeat center center;background-size:100%;position:absolute;left:50%;top:50%;margin:-55px 0 0 -50px;z-index:99998;}
 .lottery_btns{width:80%;margin:0 auto;}
 .btn{width:47%;height:30px;}
@@ -84,7 +85,7 @@ a{text-decoration: none;color:#666;-webkit-touch-callout: none!important;}
 .m6 img{width:20%;}
 .m6 p{width:94%;margin-left:2%;color:#fff;font-size:1rem;}
 .share_arrow{margin-bottom:15px;}
-
+.prize-picture{display: none;}
 /*animation*/
 .fd{-webkit-animation: fd 1s ease both;}
 .dy02{-webkit-animation-delay:.2s;}
