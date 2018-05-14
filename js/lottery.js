@@ -206,7 +206,8 @@ $(function(){
 				share_tips();
 			break;
 			case 'receives_btn':
-				window.location.href = 'http://www.hehaibao.com';
+				$popover.find('.m5').hide();
+				$popover.find('.m7').show();
 			break;
 			case 'come_again_btn':
 				lottery();

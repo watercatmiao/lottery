@@ -76,6 +76,24 @@
 		<p>每日首次分享，可多获一次抽奖机会哦</p>
 		<p>快去分享吧 !</p>
 	</div>
+	<!--填写资料--->
+	<div class="modal m7">
+		<p class="message">请完善资料</p>
+		<div class="message-box">
+			<label class="message-txt">收货地址：</label>
+			<div class="message-inputbox">
+				<input class="message-input" type="text"/>
+			</div>
+		</div>
+		<div class="message-box">
+			<label class="message-txt">电话：</label>
+			<div class="message-inputbox">
+				<input class="message-input" type="text"/>
+			</div>
+		</div>
+		<a href="javascript:;" id="save_btn" class="save_btn modal_btns">保存资料</a>
+		<a href="javascript:;" class="close_btn"></a>
+	</div>
 </div>
 <div class="prize-picture">
 	<img id="prize1" src="./img/prize_4.jpg"/>
@@ -90,6 +108,8 @@
 <!--js-->
 <script src="js/zepto.min.js"></script>
 <script src="js/zepto.rotate.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/share.js"></script>
 <script src="js/lottery.js"></script>
 </body>
 </html>
