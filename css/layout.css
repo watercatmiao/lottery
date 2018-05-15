@@ -86,6 +86,48 @@ a{text-decoration: none;color:#666;-webkit-touch-callout: none!important;}
 .m6 p{width:94%;margin-left:2%;color:#fff;font-size:1rem;}
 .share_arrow{margin-bottom:15px;}
 .prize-picture{display: none;}
+.modal .message{
+  margin-top: 25px;
+  font-size: 18px;
+  text-align: center;
+}
+.m7{
+      height: 230px;
+}
+.m7 div{
+  text-align: left;
+}
+.message-box{
+  margin-left: 20%;
+  width: 70%;
+}
+.message-txt{
+  float: left;
+  width: 70px;
+  color: #af5b00;
+}
+.message-inputbox{
+  margin-left: 70px;
+  margin-top: 10px;
+}
+.message-input{
+  width: 100%;
+  border: none;
+  padding: 0;
+  background: #fe8736;
+  color: #fff;
+  height: 24px;
+}
+.save_btn{
+  height: 38px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 38px;
+  background: #fe8736;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 14px;
+}
 /*animation*/
 .fd{-webkit-animation: fd 1s ease both;}
 .dy02{-webkit-animation-delay:.2s;}

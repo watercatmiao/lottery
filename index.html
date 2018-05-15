@@ -43,53 +43,73 @@
 		<p>5. 大转盘奖项设为xx等，一等奖为xxx，二等奖为xxx，三等奖为xxx……</p>
 		<a href="javascript:;" class="close_btn"></a>
 	</div>
-	<!--我的中奖记录--->
+	<!--我的中奖记录-->
 	<div class="modal m2">
 		<h2 class="modal_title tc">我的中奖记录</h2>
 		<ul class="lottery_records"></ul>
 		<a href="javascript:;" class="close_btn"></a>
 	</div>
-	<!--分享--->
+	<!--分享-->
 	<div class="modal m3">
 		<p>分享到朋友圈</p>
 		<p>再送 1 次抽奖机会哦！</p>
 		<a href="javascript:;" id="share_btn" class="modal_btns"></a>
 		<a href="javascript:;" class="close_btn"></a>
 	</div>
-	<!--很遗憾--->
+	<!--很遗憾-->
 	<div class="modal m4">
 		<p><img class="sorry" width="100%" src="img/sorry.png" /></p>
 		<p class="tip_txt">很遗憾你没有中奖</p>
 		<a href="javascript:;" id="come_again_btn" class="modal_btns"></a>
 		<a href="javascript:;" class="close_btn"></a>
 	</div>
-	<!--恭喜您中奖啦--->
+	<!--恭喜您中奖啦-->
 	<div class="modal m5">
 		<p><img class="ok" width="100%" src="img/ok.png" /></p>
 		<p class="tip_txt">恭喜你中了<font color="#fb4727">一等奖</font>哦！</p>
 		<a href="javascript:;" id="receives_btn" class="modal_btns"></a>
 		<a href="javascript:;" class="close_btn"></a>
 	</div>
-	<!--分享提示--->
+	<!--分享提示-->
 	<div class="modal m6">
 		<p class="share_arrow tr"><img width="100%" src="img/share_arrow.png"/></p>
 		<p>每日首次分享，可多获一次抽奖机会哦</p>
 		<p>快去分享吧 !</p>
 	</div>
+	<!--填写资料--->
+	<div class="modal m7">
+		<p class="message">请完善资料</p>
+		<div class="message-box">
+			<label class="message-txt">收货地址：</label>
+			<div class="message-inputbox">
+				<input class="message-input" type="text"/>
+			</div>
+		</div>
+		<div class="message-box">
+			<label class="message-txt">电话：</label>
+			<div class="message-inputbox">
+				<input class="message-input" type="text"/>
+			</div>
+		</div>
+		<a href="javascript:;" id="save_btn" class="save_btn modal_btns">保存资料</a>
+		<a href="javascript:;" class="close_btn"></a>
+	</div>
 </div>
 <div class="prize-picture">
-	<img id="prize1" src="./img/1.png"/>
-	<img id="prize2" src="./img/1.png"/>
-	<img id="prize3" src="./img/1.png"/>
-	<img id="prize4" src="./img/1.png"/>
-	<img id="prize5" src="./img/1.png"/>
-	<img id="prize6" src="./img/1.png"/>
-	<img id="prize7" src="./img/1.png"/>
-	<img id="prize8" src="./img/1.png"/>
+	<img id="prize1" src="./img/prize_4.jpg"/>
+	<img id="prize2" src="./img/thanks.jpg"/>
+	<img id="prize3" src="./img/prize_3.jpg"/>
+	<img id="prize4" src="./img/thanks.jpg"/>
+	<img id="prize5" src="./img/prize_1.jpg"/>
+	<img id="prize6" src="./img/thanks.jpg"/>
+	<img id="prize7" src="./img/prize_2.jpg"/>
+	<img id="prize8" src="./img/thanks.jpg"/>
 </div>
 <!--js-->
 <script src="js/zepto.min.js"></script>
 <script src="js/zepto.rotate.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/share.js"></script>
 <script src="js/lottery.js"></script>
 </body>
 </html>
